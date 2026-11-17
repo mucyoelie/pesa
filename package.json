@@ -1,0 +1,24 @@
+{
+  "name": "pesa-wallet",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pesa Wallet - track income and expenses across bank, mobile money and cash accounts, with budgets, categories and reports.",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "dev": "concurrently -n api,web -c cyan,magenta \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "npm run dev -w server",
+    "dev:web": "npm run dev -w client",
+    "build": "npm run build -w client",
+    "start": "npm run start -w server",
+    "seed": "npm run seed -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.7"
+  }
+}
